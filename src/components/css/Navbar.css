@@ -1,0 +1,53 @@
+/* 전체 헤더 스타일 */
+.header {
+   display: flex;
+   justify-content: space-between; /* 메뉴와 로그인 버튼 간격 조정 */
+   align-items: center; /* 세로 중앙 정렬 */
+   height: 60px; /* 고정된 높이 설정 */
+   padding: 0 20px;
+
+   border-bottom: 2px solid #ddd; /* 하단 선 추가 */
+   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* 약간의 그림자 */
+   height: 100px;
+}
+
+/* 메뉴 스타일 */
+.header__menu {
+   flex: 1; /* 메뉴가 가운데에 올 수 있도록 공간 확보 */
+   text-align: center;
+}
+
+.header__menu ul {
+   display: inline-flex; /* 메뉴를 가로로 정렬 */
+   list-style: none; /* 점 제거 */
+   gap: 30px; /* 메뉴 간격 */
+   padding: 0;
+   margin: 0;
+}
+
+.header__menu ul li {
+   font-size: 18px;
+}
+
+.header__menu ul li a {
+   text-decoration: none; /* 밑줄 제거 */
+   color: #333;
+}
+
+.header__menu ul li a:hover {
+   color: #007bff; /* 호버 시 강조 색상 */
+}
+
+/* 로그인 버튼 스타일 */
+.header__auth {
+   font-size: 18px;
+}
+
+.header__auth a {
+   text-decoration: none; /* 밑줄 제거 */
+   color: #333;
+}
+
+.header__auth a:hover {
+   color: #007bff; /* 호버 시 강조 색상 */
+}
