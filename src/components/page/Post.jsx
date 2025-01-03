@@ -20,6 +20,7 @@ const filledRows = [...rows, ...Array(totalRows - rows.length).fill({})]
 
 export default function BasicTable({ isAuthenticated, user }) {
    return (
+      // eslint-disable-next-line
       <TableContainer component={Paper} sx={{ width: '1200px', margin: 0, margin: 'auto' }}>
          <Container sx={{ fontSize: '30px', fontStyle: 'bold', textAlign: 'center' }}>공지사항</Container>
          <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -55,7 +56,7 @@ export default function BasicTable({ isAuthenticated, user }) {
             <Pagination count={10} shape="rounded" />
             {isAuthenticated ? (
                <>
-                  <Link to="/">글쓰기</Link>
+                  <Link to="/create">글쓰기</Link>
                </>
             ) : (
                <></>

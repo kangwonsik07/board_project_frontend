@@ -7,6 +7,8 @@ import SignupPage from './pages/Signuppage'
 import { checkAuthStatusThunk } from './features/authSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import MyPage from './pages/Mypage'
+import PostCreatePage from './pages/PostCreatePage'
 
 function App() {
    const dispatch = useDispatch()
@@ -15,6 +17,7 @@ function App() {
    useEffect(() => {
       dispatch(checkAuthStatusThunk())
    }, [dispatch])
+
    return (
       <>
          <Navbar isAuthenticated={isAuthenticated} user={user} />
@@ -22,6 +25,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Loginpage />} />
             <Route path="/signup" element={<SignupPage />} />
+            <Route path="/my/" element={<MyPage auth={user} />} />
+            <Route Path="/my/:id" element={<MyPage auth={user} />} />
+            <Route path="/create/" element={<PostCreatePage />} />
          </Routes>
       </>
    )

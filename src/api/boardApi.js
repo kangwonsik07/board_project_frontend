@@ -56,3 +56,37 @@ export const checkAuthStatus = async () => {
       throw error // request 할때 오류 발생시 에러를 registerUser()함수를 실행한 곳으로 던짐
    }
 }
+
+//포스트 등록
+
+export const createPost = async (postData) => {
+   try {
+      const response = await boardApi.post('/create/create', postData)
+      return response
+   } catch (error) {
+      console.error(`API Request 오류: ${error.message}`)
+      throw error
+   }
+}
+
+// 포스트 수정
+export const updatePost = async (id, postData) => {
+   try {
+      const response = await boardApi.put(`/create/${id}`, postData)
+      return response
+   } catch (error) {
+      console.error(`API Request 오류: ${error.message}`)
+      throw error
+   }
+}
+
+// 포스트 삭제
+export const deletePost = async (id) => {
+   try {
+      const response = await boardApi.delete(`/create/${id}`)
+      return response
+   } catch (error) {
+      console.error(`API Request 오류: ${error.message}`)
+      throw error
+   }
+}
