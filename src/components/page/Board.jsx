@@ -43,7 +43,7 @@ export default function BasicTable({ isAuthenticated, user }) {
                      <TableCell component="th" scope="row">
                         {row.name}
                      </TableCell>
-                     <TableCell align="center">{row.calories}</TableCell>
+                     <TableCell align="center">{user.title}</TableCell>
                      <TableCell align="center">{row.fat}</TableCell>
                      <TableCell align="center">{row.carbs}</TableCell>
                      <TableCell align="center">{row.protein}</TableCell>

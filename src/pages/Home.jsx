@@ -1,4 +1,4 @@
-import Post from '../components/page/Post'
+import Board from '../components/page/Board'
 import { checkAuthStatusThunk } from '../features/authSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
@@ -6,13 +6,13 @@ import { useEffect } from 'react'
 const Home = () => {
    const dispatch = useDispatch()
    const { isAuthenticated, user } = useSelector((state) => state.auth)
-
+   console.log(user)
    useEffect(() => {
       dispatch(checkAuthStatusThunk())
    }, [dispatch])
    return (
       <>
-         <Post isAuthenticated={isAuthenticated} user={user} />
+         <Board isAuthenticated={isAuthenticated} user={user} />
       </>
    )
 }

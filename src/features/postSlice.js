@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { createPost, updatePost, deletePost } from '../api/boardApi'
 
 // 게시물 등록
-export const createPostThunk = createAsyncThunk('/createPost', async (postData, { rejectWithValue }) => {
+export const createPostThunk = createAsyncThunk('/create/create/createPost', async (postData, { rejectWithValue }) => {
    try {
       const response = await createPost(postData)
       return response.data.post
