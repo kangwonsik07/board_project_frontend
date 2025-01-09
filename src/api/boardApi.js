@@ -90,3 +90,14 @@ export const deletePost = async (id) => {
       throw error
    }
 }
+
+// 전체 포스트 가져오기
+export const getPosts = async (page) => {
+   try {
+      const response = await boardApi.get('/')
+      return response
+   } catch (error) {
+      console.error(`API Request 오류: ${error.message}`)
+      throw error
+   }
+}
